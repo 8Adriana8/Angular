@@ -1,0 +1,53 @@
+ /* div{
+    width: 300px;
+    height: 500px;
+    background-color: rgb(232, 20, 207);
+    color: white;
+    
+} */
+
+section{
+    width: 250px;
+    padding-bottom: 0;
+    border: 1px solid purple;
+    display: flex;
+    flex-direction: column;
+}
+.img-container{
+    width: 250px;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    
+}
+.img-container{
+    height: 150px;
+}
+.product-data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+h2{
+    font-size: 20px;
+    margin-bottom: 0;
+
+}
+p{
+    text-align: center;
+    font-size: 13px;
+}
+strong{
+    color: blueviolet;
+    
+}
+button{
+border: none;
+height: 40px;
+background-color: blueviolet;
+color: white;
+font-family: 'Montserrat', sans-serif;
+font-weight: 500;
+cursor: pointer;
+}

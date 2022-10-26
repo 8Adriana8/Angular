@@ -1,0 +1,74 @@
+
+<div class="flex">
+  <mat-card class="card-form">
+    <mat-card-title>Cadastro de usuários </mat-card-title>
+    
+    <mat-card-content>
+      <!-- Informar que o formulario será validado pelo template Driven Forms - ngForm para avisar que esse formulario utilizara um metodo de validacao do template Driven forms-->
+      
+<form action="#" #userForm="ngForm" (ngSubmit)="enviarForm()">
+ <mat-form-field appearance="outline">
+  <mat-label>Nome</mat-label>
+<input type="text"
+ matInput 
+ [(ngModel)]="dadosUsuario.nome" 
+ name="nome"
+ required
+ minlength="4"
+ #inputNome="ngModel"     
+ >
+<mat-error>
+  <!-- O método getError informa se o problema de validacao esta vindo de algum atributo de validacao especifico-->
+  <span *ngIf="inputNome.getError('required')">Este campo é obrigatório!</span>
+  <span *ngIf="inputNome.getError('minlength')">Este campo precisa possuir no min 4 caracteres!</span>
+</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Sobrenome</mat-label>
+<input 
+type="text" 
+matInput 
+[(ngModel)]="dadosUsuario.sobrenome" 
+name="sobrenome"
+required
+minlength="4"
+#inputSobrenome="ngModel">
+<mat-error>Campo inválido</mat-error>        
+
+</mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail</mat-label>
+<input 
+type="email" matInput 
+[(ngModel)]="dadosUsuario.email" 
+name="email"
+required
+email
+#inputEmail="ngModel">
+<mat-error>Campo inválido</mat-error>        
+</mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+<input 
+type="password" matInput 
+[(ngModel)]="dadosUsuario.senha" 
+name="senha"
+requiredminlength="8"
+#inputSenha="ngModel">
+<mat-error>Campo inválido</mat-error>        
+</mat-form-field>
+
+        <button 
+        type="submit" 
+        mat-raised-button
+         color="primary"
+         [disabled]="userForm.invalid"
+         >Cadastrar</button>
+<!-- <p>{{ userForm.invalid}}</p> -->
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
